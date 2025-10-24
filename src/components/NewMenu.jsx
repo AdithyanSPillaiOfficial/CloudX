@@ -26,7 +26,7 @@ function NewMenu() {
         }
     ]
   return (
-    <div className='absolute left-40 top-0 bg-white z-10 shadow-xl p-3'>
+    <div className='absolute left-40 top-0 bg-white z-10 shadow-xl p-3 rounded-2xl'>
         {menuItems.map((menuItem, index) => (
             <div className='w-50 p-4 hover:bg-[#c6f7ec67] rounded-2xl flex flex-row gap-5' onClick={menuItem.action} key={index}>
                 {menuItem.icon}
