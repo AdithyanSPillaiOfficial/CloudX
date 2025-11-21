@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 
 function UserAvatarMenu() {
     const router = useRouter();
+    const userInfo = JSON.parse(Cookies.get('user'));
     function handleLogout() {
         Cookies.remove('sessionid');
         Cookies.remove('user');
@@ -14,10 +15,10 @@ function UserAvatarMenu() {
         router.replace("/login");
     }
   return (
-    <div className='absolute right-0 mz-5 z-10 flex flex-col bg-white shadow-xl p-3'>
+    <div className='absolute w-max right-0 mz-5 z-10 flex flex-col bg-white shadow-xl p-3'>
         <div className='p-5 flex flex-row gap-5 hover:bg-[#c6f7ec67] rounded-2xl'>
             <CircleUser />
-            Profile
+            {userInfo?.name ? userInfo.name : "Profile"}
         </div>
         <div className='p-5 flex flex-row gap-5 hover:bg-[#c6f7ec67] rounded-2xl' onClick={handleLogout}>
             <LogOut />
